@@ -1,0 +1,142 @@
+$White: hsl(0, 0%, 100%);
+$Light-pink: hsl(275, 100%, 97%);
+$Grayish-purple: hsl(292, 16%, 49%);
+$Dark-purple: hsl(292, 42%, 14%);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: $Light-pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+
+}
+
+.calque{
+    z-index: 5;
+    opacity: 0.3;
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0%);
+}
+
+.background-img{
+    top: 0;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    z-index: -5;
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    height: 35.5vh;
+}
+
+.accordion{
+    background-color: $White;
+    width: 665px;
+    padding: 46px;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    p{
+        display: none;
+        margin-top: 30px;
+        font-family: "Work Sans", sans-serif;
+        font-weight: 400;
+        color: $Grayish-purple;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.title{
+    display: flex;
+    gap: 25px;
+    margin-bottom: 50px;
+
+    h1{
+        font-family: "Work Sans", sans-serif;
+        font-weight: 700;
+        color: $Dark-purple;
+        font-size: 63px;
+    }
+}
+
+hr{
+    border-color: $Grayish-purple;
+    opacity: 0.1;
+    margin: 30px 0;
+}
+
+.accordion-question{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    color: $Dark-purple;
+    font-size: 13.2px;
+
+    &:hover{
+        cursor: pointer;
+        h2{
+                
+                color: #ad28eb;
+        }
+    }
+
+    h2{
+        &:hover{
+            cursor: pointer;
+            color: #ad28eb;
+        }
+    }
+
+
+}
+
+.accordion-question::before,
+.accordion-question::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 25px; /* Ajustez cette valeur selon vos besoins */
+}
+
+.accordion-question::before {
+  top: -25px; /* Doit être la même valeur négative que la hauteur */
+}
+
+.accordion-question::after {
+  bottom: -25px; /* Doit être la même valeur négative que la hauteur */
+}
+
+button{
+    width: 20px;
+    height: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+        cursor: pointer;
+    }
+    .open{
+        display: none;
+    }
+}
